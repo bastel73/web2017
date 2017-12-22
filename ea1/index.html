@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" description="Sebastian Wiele">
+    <title>D2 Junioren SV Ofenerdiek</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--<link href="../ea1/lightbox/css/lightbox.css" rel="stylesheet">-->
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="loader.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="../ea1/lightbox/js/lightbox.js"></script>-->
+</head>
+<body>
+<div class="mainPage">
+    <div class="logoArea"></div>
+    <header>Header
+        <div class="banner"><img class="banner-image" src="background_bg.png">
+        <div class="input">
+            <ul>
+            <li><a href="#">nächste Spiele</a></li>
+            <li><a href="#">Aufstellung</a>
+
+
+            </li>
+            <li><a href="#">Tabelle</a>
+                <ul>
+                    <li><a href="#"></a>Spiel1</li>
+                    <li><a href="#"></a>Spiel2</li>
+                    <li><a href="#"></a>Spiel3</li>
+                </ul>
+            </li>
+            </ul>
+        </div>
+        </div>
+    </header>
+    <nav class="specialNav">
+        <button onclick="onPressAdd()">Spielerliste</button>
+        <button onclick="onPressDelete()">Liste weg</button>
+        <input type="text" name="spieler" id="spieler">    </nav>
+    <article id="mainContent" class="mainArticle">
+        <h1>Hier entsteht die Seite der D2-Junioren des SV Ofenerdiek</h1>
+        <p>Zukünftig können hier die Mannschaftsaufstellung für Spiele, die Tabelle, Trainingszeiten, Ergebnisse der
+            letzten Spiele und viele andere Informationen abgerufen werden</p>
+        <div id="aufstellung" class="spielfeld">
+            <div id="torwart" class="spieler" ondrop="drop(event)" ondragover="allowDrop(event)">Torwart</div>
+            <div id="linkerAussenverteidiger" class="spieler">linker Aussenverteidiger</div>
+            <div id="innenVerteidiger1" class="spieler">Innenverteidiger</div>
+            <div id="innenVerteidiger2" class="spieler" style="grid-column: 5/6; grid-row: 3">Innenverteidiger</div>
+            <div id="rechterAussenverteidiger" class="spieler" style="grid-column: 6/7; grid-row: 4;">rechter Aussenverteidiger</div>
+
+        </div>
+
+    </article>
+    <aside class="mainAside">
+
+        <div id="mainAsideID" class="nextEvents">Next Events</div>
+        <div class="currentTable">Pictures</div>
+    </aside>
+    <section class="miscInfo">
+        <div class="newPlayerForm">
+
+            <form action="loader.php" method="POST">
+                <input type="text" name="firstName"/>Vorname<br />
+                <input type="text" name="lastName"/>Nachname<br />
+                <input type="text" name="yob"/>Geburtsjahr<br />
+                <input type="text" name="birthday"/>Geburtstag<br />
+                <input type="text" name="position"/>Spielposition<br />
+                <input type="submit" name="send" value="Eintragen"/>
+            </form>
+        </div>
+    </section>
+    <footer class="mainFooter">Footer</footer>
+</div>
+
+</body>
+</html>

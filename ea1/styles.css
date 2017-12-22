@@ -1,0 +1,217 @@
+:root {
+    --main-bg-color: #0095da;
+}
+html{
+    padding: 10px;
+
+}
+.mainPage:before{
+    content:"";
+
+
+    background-size: cover;
+    position: fixed;
+    display: block;
+    left :0;
+    top: 0;
+    width: 1800px;
+    height: 1200px;
+    z-index: -1;
+    filter:  blur(5px);
+}
+list{
+    list-style-type: none;
+}
+@media screen and (min-width: 480px) {
+    .mainPage {
+        height: 980px;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 2fr 1fr 1fr;
+        grid-gap: 2em;
+        grid-template-areas: "title title" "masterhead masterhead" "main main" "main main" "pictures pictures" "sidebar sidebar" "footerarea footerarea";
+    }
+}
+
+@media screen and (min-width: 720px ) {
+    .mainPage {
+        height: 980px;
+        display: grid;
+        grid-template-columns: 1fr 3fr 2fr;
+        grid-template-rows: 1fr 1fr 3fr 2fr 1fr;
+        grid-gap: 2em;
+        grid-template-areas: "logo title title" "masterhead main main" "pictures main main" "sidebar sidebar sidebar" "footerarea footerarea footerarea";
+
+    }
+}
+
+@media screen and (min-width: 1200px ) {
+
+    .mainPage {
+        height: 980px;
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr 2fr;
+        grid-template-rows: 1fr 2fr 3fr 1fr;
+        grid-gap: 2em;
+        grid-template-areas: "logo title title sidebar" "masterhead main main sidebar" "pictures main main sidebar" "footerarea footerarea footerarea footerarea";
+    }
+}
+/*
+Hier kommen die Animationen
+ */
+@keyframes colors {
+    from {
+        background-color: var(--main-bg-color);
+    }
+    33% {
+        background-color: darkslategrey;
+    }
+    66% {
+        background-color: grey;
+    }
+    to {
+        background-color: var(--main-bg-color);
+    }
+}
+
+@keyframes rotate { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+@keyframes translate {
+    100% {-webkit-transform: translate3d(-200px, 0px, 0px); transform: translate3d(-200px, 0px, 0px)}
+}
+
+header {
+    background: var(--main-bg-color);
+    grid-area: title;
+
+}
+.banner{
+
+}
+
+
+
+button{
+
+    background-color: white;
+    border: 2px solid #555555;
+    color: black;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #555555;
+    color: white;
+}
+
+header>{
+    list-style-type: none;
+}
+.specialNav {
+
+    background-color: var(--main-bg-color);
+    background: linear-gradient(42deg, transparent, var(--main-bg-color));
+    animation-name: colors;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+
+    grid-area: masterhead;
+}
+
+.specialNav:hover button{
+    background-color: yellow;
+}
+
+.mainArticle {
+
+    background-color: var(--main-bg-color);
+    grid-area: main;
+    opacity: 0.9;
+}
+
+.mainAside {
+    background-color: var(--main-bg-color);
+    grid-area: pictures;
+}
+
+.miscInfo {
+    background-color: var(--main-bg-color);
+    grid-area: sidebar;
+}
+
+.mainFooter {
+    background-color: var(--main-bg-color);
+    grid-area: footerarea;
+}
+
+.logoArea {
+    background-image: url("svo_logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    grid-area: logo;
+
+}
+.logoArea{
+    animation:rotate 2s linear;
+}
+/*article {
+    padding: 1em;
+}*/
+
+.spielfeld {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /*grid-gap: 5px;*/
+
+}
+.playerList{
+    list-style-type: none;
+}
+ul>li{
+    background-color: brown;
+    border: 3px solid black;
+    margin-bottom: 2px;
+}
+
+ul>li:hover{
+    background-color: yellow;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.aufregend{
+    filter: blur(20px) sepia(20%);
+}
+
+.spielfeld>div{
+    background-color: tomato;
+}
+
+#torwart {
+    grid-column: 4;
+    grid-row: 1;
+    background-color: tomato;
+
+}
+
+#linkerAussenverteidiger {
+    grid-column: 1/2;
+    grid-row: 3;
+    background-color: tomato;
+}
+
+#innenVerteidiger1 {
+    grid-column: 3/4;
+    grid-row: 3;
+    background-color: tomato;
+    animation: translate 2s linear;
+}

@@ -1,0 +1,6 @@
+/bookstore/book/title
+/bookstore/book[1]/title
+/bookstore/book/price[text()]
+/bookstore/book[price>35]/price
+/bookstore/book[price<35]/title
+/teamlist/player[yob=2006]/lastName
